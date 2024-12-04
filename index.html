@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Compound Interest Calculator</h1>
+        <label for="initialDeposit">Initial Deposit ($):</label>
+        <input type="number" id="initialDeposit" placeholder="Enter initial deposit" required>
+
+        <label for="contributions">Contributions:</label>
+        <input type="number" id="contributions" placeholder="Enter contribution amount" required>
+        <div>
+            <label><input type="radio" name="frequency" value="annual" checked> Annual</label>
+            <label><input type="radio" name="frequency" value="monthly"> Monthly</label>
+            <label><input type="radio" name="frequency" value="weekly"> Weekly</label>
+            <label><input type="radio" name="frequency" value="daily"> Daily</label>
+        </div>
+
+        <label for="years">Number of Years:</label>
+        <input type="range" id="years" min="1" max="30" value="10" oninput="this.nextElementSibling.value = this.value">
+        <output>10</output>
+
+        <label for="annualReturn">Average Annual Return (%):</label>
+        <input type="number" id="annualReturn" placeholder="Enter return percentage" required>
+
+        <button id="calculateBtn">Calculate</button>
+
+        <h2>Future Balance: $<span id="futureBalance">0.00</span></h2>
+        <canvas id="investmentChart" width="400" height="200"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
